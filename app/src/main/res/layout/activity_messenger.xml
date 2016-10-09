@@ -9,23 +9,9 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.chris.messengerapp.Messenger">
 
-    <Button
+    <ListView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/send"
-        android:id="@+id/send"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:onClick="onSendMessage" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/message"
-        android:ems="10"
-        android:layout_below="@+id/send"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:inputType="text" />
+        android:id="@+id/lvStarSigns"
+        android:layout_alignParentTop="true" />
 </RelativeLayout>
