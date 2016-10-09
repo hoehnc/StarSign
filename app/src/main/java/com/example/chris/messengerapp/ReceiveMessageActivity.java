@@ -1,3 +1,4 @@
+// Test for gitHub
 package com.example.chris.messengerapp;
 
 import android.support.v7.app.AppCompatActivity;
