@@ -20,13 +20,15 @@ public class Messenger extends AppCompatActivity {
 
     ArrayList<String> listItems = new ArrayList<>();
     ArrayAdapter<String> adapter;
-    ListView listView = (ListView) findViewById(R.id.lvStarSigns);
+    ListView listView;
     String starSign = "None";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_messenger);
+
+        listView  = (ListView) findViewById(R.id.lvStarSigns);
 
         // Create an adapter between the list we have in this file (that we add items too) and the listView control on the interface
         adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,listItems);
@@ -48,18 +50,20 @@ public class Messenger extends AppCompatActivity {
 
         // Update the listView control with the added star signs using the adapter
         adapter.notifyDataSetChanged();
+
         // Update the behavior of the item click
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                // Get the selected text and give it to starSign
                 starSign = listView.getItemAtPosition(position).toString();
+                SendSign();
             }
         });
     }
 
     // Send the star sign to the activity
-    public void SendSign(View view)
+    public void SendSign()
     {
         Intent intent = new Intent(this, ReceiveMessageActivity.class);
         intent.putExtra(ReceiveMessageActivity.EXTRA_MESSAGE, starSign);
